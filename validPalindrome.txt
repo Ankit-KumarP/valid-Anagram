@@ -1,0 +1,16 @@
+//Logic: If the length is different return false.
+//     : Take an array of length26, First store the frequency of each character of s then decrease the frequencies of characters while traversing on string  t, check if the value at any index is not zero and then false
+// T = O(n) | S =O(1)
+
+class Solution {
+    public boolean isAnagram(String s, String t) {
+              int fst [] = new int[26];
+              for(int c: s.toCharArray())
+                   fst[c-'a']++;
+               for(int c: t.toCharArray())
+                  fst[c-'a']--; 
+              for(int i =0;i<26;i++)
+                   if(fst[i] != 0) return false;     
+            return true;    
+    }
+}
